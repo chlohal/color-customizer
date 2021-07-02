@@ -1,0 +1,141 @@
+.colorpicker {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 0 1.85rem 0 #0009;
+    padding: 1rem;
+    width: min-content;
+    border-radius: 0.5rem;
+    animation: fade-in 0.1s;
+    position: fixed;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.colorpicker .picker-sl-parent {
+    width: 20rem;
+    height: 13.333rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.picker-sl-parent .picker-sl-knob {
+    box-sizing: border-box;
+    position: absolute;
+    box-shadow: 0 0 0.25rem 0 #0009;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    background: inherit;
+    border: 0.125rem solid #fff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.colorpicker .picker-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.colorpicker .picker-gradient.saturation {
+    background: linear-gradient(-90deg,#fff0,#fff);
+}
+
+.colorpicker .picker-gradient.lightness {
+    background: linear-gradient(180deg,#0000,#000);
+}
+
+.colorpicker .hue-slider {
+    width: 20rem;
+    height: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+.hue-slider .picker-h-knob {
+    box-sizing: border-box;
+    position: absolute;
+    box-shadow: 0 0 0.25rem 0 #0009;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    border: 0.125rem solid #fff;
+    transform: translate(50%, 0%);
+    pointer-events: none;
+}
+
+.color-picker-input {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+    opacity: 0;
+}
+
+.color-picker-input-holder {
+    width: 6em;
+    height: 6em;
+    border: dotted transparent 1px;
+    position: relative;
+}
+
+.color-picker-input-holder:focus-within {
+    outline: dotted black 1.5px;
+}
+
+.color-picker-input-holder.active {
+    outline: none;
+    z-index: 2;
+}
+
+.color-picker-hex-box:focus {
+    outline: none;
+}
+
+.color-picker-hex-box {
+    box-sizing: border-box;
+    color: #141414;
+    text-transform: uppercase;
+    flex-shrink: 1;
+    border: 0;
+    width: 7ch;
+    font: inherit;
+    font-weight: 400;
+    text-align: end;
+    margin-left: auto;
+}
+
+.color-picker-hex-box-parent::before {
+    content: "#";
+    position: absolute;
+    color: #4A4A4A;
+}
+
+.color-picker-hex-box-parent {
+    position: relative;
+    display: flex;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    letter-spacing: 1px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1rem;
+    border: solid 1px #4A4A4A;
+    width: 8ch;
+    margin-left: auto;
+}
